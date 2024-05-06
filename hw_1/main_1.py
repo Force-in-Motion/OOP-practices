@@ -49,3 +49,8 @@ class Book:
         :param author: Пренимает автора книги
         :param count_pages: Пренимает количество страниц книги
         """
+        self.name = name
+        self.author = author
+        self.count_pages = count_pages
+
+    
