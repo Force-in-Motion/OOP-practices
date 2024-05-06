@@ -82,3 +82,16 @@ class Book:
 war_and_world = Book('Война и мир', 'Лев Толстой', 1300)
 war_and_world.open_page()
 war_and_world.print_book_info()
+
+
+class PassengerPlane:
+
+    def __init__(self, manufacturer, model, capacity, current_altitude, current_speed):
+        """
+        Формирует шаблон объекта PassengerPlane
+        :param manufacturer: Пренимает название производителя
+        :param model: Пренимает название модели
+        :param capacity: Пренимает вместимость пассажиров
+        :param current_altitude: Пренимает текущую высоту
+        :param current_speed: Пренимает текущую скорость
+        """
