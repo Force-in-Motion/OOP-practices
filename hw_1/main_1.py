@@ -38,3 +38,14 @@ dog = Animal('Шнырь', 'Пес', 7, 'Рррррааааааввв Ррррр
 
 dog.print_info_animal()
 dog.print_sound_animal()
+
+
+class Book:
+
+    def __init__(self, name: str, author: str, count_pages: int):
+        """
+        Формирует шаблон объекта Book
+        :param name: Пренимает название книги
+        :param author: Пренимает автора книги
+        :param count_pages: Пренимает количество страниц книги
+        """
