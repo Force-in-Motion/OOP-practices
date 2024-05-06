@@ -95,3 +95,9 @@ class PassengerPlane:
         :param current_altitude: Пренимает текущую высоту
         :param current_speed: Пренимает текущую скорость
         """
+        self.manufacturer =manufacturer
+        self.model = model
+        self.capacity = capacity
+        self.current_altitude = current_altitude
+        self.current_speed = current_speed
+        
