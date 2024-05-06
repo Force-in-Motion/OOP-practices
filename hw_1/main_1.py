@@ -86,7 +86,7 @@
 
 class PassengerPlane:
 
-    def __init__(self, manufacturer, model, capacity, current_altitude, current_speed):
+    def __init__(self, manufacturer: str, model: str, capacity: int, current_altitude: float, current_speed: int):
         """
         Формирует шаблон объекта PassengerPlane
         :param manufacturer: Пренимает название производителя
@@ -95,7 +95,7 @@ class PassengerPlane:
         :param current_altitude: Пренимает текущую высоту
         :param current_speed: Пренимает текущую скорость
         """
-        self.manufacturer =manufacturer
+        self.manufacturer = manufacturer
         self.model = model
         self.capacity = capacity
         self.current_altitude = current_altitude
@@ -107,6 +107,8 @@ class PassengerPlane:
         Выводит на консоль взлет самолета если он взлетел
         :return:
         """
+
+
 
     def plane_landing(self):
         """
@@ -125,3 +127,20 @@ class PassengerPlane:
         Выводит на консоль изменение скорости самолета если она изменилась
         :return:
         """
+
+    def print_PassengerPlane_info(self):
+        """
+        Выводит в консоль всю информацию о пассажирском самолете в созданном объекте на базе класса PassengerPlane
+        :return:
+        """
+        print(f'Информационный блок о вашем самолете :'
+              f'\nПроизводитель самолета: {self.manufacturer}'
+              f'\nМодель самолета: {self.model}'
+              f'\nПассажировместимость самолета: {self.capacity}'
+              f'\nТекущая высота самолета: {self.current_altitude}'
+              f'\nТекущая скорость самолета: {self.current_speed}')
+        print()
+
+
+air_plane = PassengerPlane('Россия', 'Airbus A320NEO', 120, 5752.7, 340)
+air_plane.print_PassengerPlane_info()
