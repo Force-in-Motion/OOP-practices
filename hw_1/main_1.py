@@ -34,3 +34,7 @@ class Animal:
         print()
 
 
+dog = Animal('Шнырь', 'Пес', 7, 'Рррррааааааввв Рррррааааааввв')
+
+dog.print_info_animal()
+dog.print_sound_animal()
