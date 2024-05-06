@@ -40,48 +40,48 @@
 # dog.print_sound_animal()
 
 
-class Book:
-
-    def __init__(self, name: str, author: str, count_pages: int):
-        """
-        Формирует шаблон объекта Book
-        :param name: Пренимает название книги
-        :param author: Пренимает автора книги
-        :param count_pages: Пренимает количество страниц книги
-        """
-        self.name = name
-        self.author = author
-        self.count_pages = count_pages
-
-    def open_page(self):
-        """
-        Выполняет проверки и если они пройдены выводит строку- открылась страница или нет
-        :return:
-        """
-        number_page = int(input('Введите номер страницы, которую требуется открыть >> '))
-
-        if number_page <= self.count_pages and number_page > 0:
-            print('Страница в вашей книге найдена и открыта')
-            print()
-        else:
-            print('Номер указанной страницы в вашей книге отсутствует')
-            print()
-
-
-    def print_book_info(self):
-        """
-        Выводит в консоль всю информацию о книге в созданном объекте на базе класса Book
-        :return:
-        """
-        print(f'Информационный блок о вашей книге :'
-              f'\nНазвание книги: {self.name}'
-              f'\nАвтор книги: {self.author}'
-              f'\nКоличество страниц: {self.count_pages}')
-        print()
-
-war_and_world = Book('Война и мир', 'Лев Толстой', 1300)
-war_and_world.open_page()
-war_and_world.print_book_info()
+# class Book:
+#
+#     def __init__(self, name: str, author: str, count_pages: int):
+#         """
+#         Формирует шаблон объекта Book
+#         :param name: Пренимает название книги
+#         :param author: Пренимает автора книги
+#         :param count_pages: Пренимает количество страниц книги
+#         """
+#         self.name = name
+#         self.author = author
+#         self.count_pages = count_pages
+#
+#     def open_page(self):
+#         """
+#         Выполняет проверки и если они пройдены выводит строку- открылась страница или нет
+#         :return:
+#         """
+#         number_page = int(input('Введите номер страницы, которую требуется открыть >> '))
+#
+#         if number_page <= self.count_pages and number_page > 0:
+#             print('Страница в вашей книге найдена и открыта')
+#             print()
+#         else:
+#             print('Номер указанной страницы в вашей книге отсутствует')
+#             print()
+#
+#
+#     def print_book_info(self):
+#         """
+#         Выводит в консоль всю информацию о книге в созданном объекте на базе класса Book
+#         :return:
+#         """
+#         print(f'Информационный блок о вашей книге :'
+#               f'\nНазвание книги: {self.name}'
+#               f'\nАвтор книги: {self.author}'
+#               f'\nКоличество страниц: {self.count_pages}')
+#         print()
+#
+# war_and_world = Book('Война и мир', 'Лев Толстой', 1300)
+# war_and_world.open_page()
+# war_and_world.print_book_info()
 
 
 class PassengerPlane:
@@ -100,4 +100,28 @@ class PassengerPlane:
         self.capacity = capacity
         self.current_altitude = current_altitude
         self.current_speed = current_speed
-        
+
+
+    def takeoff(self):
+        """
+        Выводит на консоль взлет самолета если он взлетел
+        :return:
+        """
+
+    def plane_landing(self):
+        """
+        Выводит на консоль посадку самолета если он сел
+        :return:
+        """
+
+    def height_change(self):
+        """
+        Выводит на консоль изменение высоты самолета если она изменилась
+        :return:
+        """
+
+    def speed_change(self):
+        """
+        Выводит на консоль изменение скорости самолета если она изменилась
+        :return:
+        """
