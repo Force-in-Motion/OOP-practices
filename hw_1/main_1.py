@@ -12,3 +12,9 @@ class Animal:
         self.type = type
         self.age = age
         self.sound = sound
+
+    def print_sound_animal(self):
+        print(f'{self.type} с именем {self.name} издает звук: {self.sound}')
+        print()
+
+    
