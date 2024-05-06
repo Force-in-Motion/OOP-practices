@@ -86,7 +86,7 @@
 
 class PassengerPlane:
 
-    def __init__(self, manufacturer: str, model: str, capacity: int, current_altitude: float, current_speed: int):
+    def __init__(self, manufacturer: str, model: str, capacity: int, current_altitude: int, current_speed: int):
         """
         Формирует шаблон объекта PassengerPlane
         :param manufacturer: Пренимает название производителя
@@ -107,7 +107,14 @@ class PassengerPlane:
         Выводит на консоль взлет самолета если он взлетел
         :return:
         """
-
+        altitude = int(input('Введите текущее значение высоты самолета >> '))
+        if self.current_altitude < altitude:
+            self.current_altitude = altitude
+            print('Самолет взлетел!')
+            print()
+        else:
+            print('Самолет находится на земле')
+            print()
 
 
     def plane_landing(self):
@@ -115,6 +122,7 @@ class PassengerPlane:
         Выводит на консоль посадку самолета если он сел
         :return:
         """
+
 
     def height_change(self):
         """
@@ -142,5 +150,6 @@ class PassengerPlane:
         print()
 
 
-air_plane = PassengerPlane('Россия', 'Airbus A320NEO', 120, 5752.7, 340)
+air_plane = PassengerPlane('Россия', 'Airbus A320NEO', 120, 0, 0)
+air_plane.takeoff()
 air_plane.print_PassengerPlane_info()
