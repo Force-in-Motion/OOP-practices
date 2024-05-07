@@ -34,12 +34,6 @@ class Animal:
         print()
 
 
-dog = Animal('Шнырь', 'Пес', 7, 'Рррррааааааввв Рррррааааааввв')
-
-dog.print_info_animal()
-dog.print_sound_animal()
-
-
 class Book:
 
     def __init__(self, name: str, author: str, count_pages: int):
@@ -78,10 +72,6 @@ class Book:
               f'\nАвтор книги: {self.author}'
               f'\nКоличество страниц: {self.count_pages}')
         print()
-
-war_and_world = Book('Война и мир', 'Лев Толстой', 1300)
-war_and_world.open_page()
-war_and_world.print_book_info()
 
 
 class PassengerPlane:
@@ -179,14 +169,6 @@ class PassengerPlane:
         print()
 
 
-air_plane = PassengerPlane('Россия', 'Airbus A320NEO', 120, 0, 0)
-air_plane.takeoff()
-air_plane.speed_change()
-air_plane.height_change()
-air_plane.plane_landing()
-air_plane.print_PassengerPlane_info()
-
-
 class MusicAlbum:
 
     def __init__(self, executor: str, name_albom: str, genre: str, track_list: list):
@@ -250,11 +232,6 @@ class MusicAlbum:
               f'\nСписок треков: {self.track_list}')
         print()
 
-muz_albom = MusicAlbum('БИ 2', 'Горизонт событий', 'Рок', 'Летчик, Ананас, Кручу верчу, Веник')
-muz_albom.add_track()
-muz_albom.dell_track()
-muz_albom.reproduces_track()
-muz_albom.print_albom_info()
 
 class Programm:
     @staticmethod
