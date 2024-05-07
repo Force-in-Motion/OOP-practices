@@ -189,4 +189,31 @@ air_plane.print_PassengerPlane_info()
 
 class MusicAlbum:
 
-    def __init__(self, executor, name_albom, genre, track_list):
+    def __init__(self, executor: str, name_albom: str, genre: str, track_list: list):
+        """
+        Формирует шаблон объекта MusicAlbum
+        :param executor: Пренимает исполнителя
+        :param name_albom: Пренимает название альбома
+        :param genre: Пренимает жанр
+        :param track_list: Пренимает список треков
+        """
+        self.executor = executor
+        self.name_albom = name_albom
+        self.genre = genre
+        self.track_list = track_list
+
+
+    def add_track(self):
+        """
+        Добавляет в альбом песню
+        :return:
+        """
+        track_list = []
+        track = input('Введите название трека, который требуется добавить в альбом >>')
+        track_list.append(track)
+
+    def dell_track(self, track_list):
+        track = input('Введите название трека, который требуется удалить >>')
+        for i in track_list:
+            if track == i:
+                del i
