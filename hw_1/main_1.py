@@ -116,6 +116,20 @@ class PassengerPlane:
             print('Самолет находится на земле')
             print()
 
+    def speed_change(self):
+        """
+        Выводит на консоль изменение скорости самолета если она изменилась
+        :return:
+        """
+        speed = int(input('Введите текущее значение скорости самолета >> '))
+        if self.current_speed < speed:
+            self.current_speed = speed
+            print('Самолет набирает скорость!')
+            print()
+        else:
+            print('Самолет находится на земле')
+            print()
+
 
     def plane_landing(self):
         """
@@ -129,12 +143,14 @@ class PassengerPlane:
         Выводит на консоль изменение высоты самолета если она изменилась
         :return:
         """
-
-    def speed_change(self):
-        """
-        Выводит на консоль изменение скорости самолета если она изменилась
-        :return:
-        """
+        altitude = int(input('Введите новое значение высоты самолета >> '))
+        if self.current_altitude < altitude or self.current_altitude > altitude:
+            self.current_altitude = altitude
+            print('Самолет изменил высоту взлетел!')
+            print()
+        else:
+            print('Самолет летит на той же высоте')
+            print()
 
     def print_PassengerPlane_info(self):
         """
@@ -152,4 +168,5 @@ class PassengerPlane:
 
 air_plane = PassengerPlane('Россия', 'Airbus A320NEO', 120, 0, 0)
 air_plane.takeoff()
+air_plane.speed_change()
 air_plane.print_PassengerPlane_info()
