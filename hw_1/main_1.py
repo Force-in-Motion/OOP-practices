@@ -211,9 +211,28 @@ class MusicAlbum:
         track_list = []
         track = input('Введите название трека, который требуется добавить в альбом >>')
         track_list.append(track)
+        print(f'Трек "{track}" был добавлен в альбом!')
+        print()
+
 
     def dell_track(self, track_list):
         track = input('Введите название трека, который требуется удалить >>')
+
+        text = f'В вашем альбоме нет трека с названием "{track}"'
+
         for i in track_list:
             if track == i:
                 del i
+                text = f'Трек с названием "{track}" был успешно удален из вашего альбома'
+        print(text)
+        print()
+
+    def reproduces_track(self, track_list):
+        track = input('Введите название трека, который требуется воспроизвести >>')
+
+        for i in track_list:
+            if track == i:
+                print('Воспроизведение песни....')
+            else:
+                print('Указанный трек отсутствует в вашей коллекции')
+
