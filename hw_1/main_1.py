@@ -131,13 +131,6 @@ class PassengerPlane:
             print()
 
 
-    def plane_landing(self):
-        """
-        Выводит на консоль посадку самолета если он сел
-        :return:
-        """
-
-
     def height_change(self):
         """
         Выводит на консоль изменение высоты самолета если она изменилась
@@ -146,11 +139,31 @@ class PassengerPlane:
         altitude = int(input('Введите новое значение высоты самолета >> '))
         if self.current_altitude < altitude or self.current_altitude > altitude:
             self.current_altitude = altitude
-            print('Самолет изменил высоту взлетел!')
+            print('Самолет изменил высоту !')
             print()
         else:
             print('Самолет летит на той же высоте')
             print()
+
+
+    def plane_landing(self):
+        """
+        Выводит на консоль посадку самолета если он сел
+        :return:
+        """
+        altitude = int(input('Введите новое значение высоты самолета >> '))
+        if altitude == 0:
+            self.current_altitude = altitude
+            print('Самолет приземлился!')
+            print()
+        elif self.current_altitude < altitude or self.current_altitude > altitude:
+            self.current_altitude = altitude
+            print('Самолет изменил высоту !')
+            print()
+        else:
+            print('Самолет летит на той же высоте')
+            print()
+
 
     def print_PassengerPlane_info(self):
         """
@@ -169,4 +182,6 @@ class PassengerPlane:
 air_plane = PassengerPlane('Россия', 'Airbus A320NEO', 120, 0, 0)
 air_plane.takeoff()
 air_plane.speed_change()
+air_plane.height_change()
+air_plane.plane_landing()
 air_plane.print_PassengerPlane_info()
