@@ -185,3 +185,8 @@ air_plane.speed_change()
 air_plane.height_change()
 air_plane.plane_landing()
 air_plane.print_PassengerPlane_info()
+
+
+class MusicAlbum:
+
+    def __init__(self, executor, name_albom, genre, track_list):
