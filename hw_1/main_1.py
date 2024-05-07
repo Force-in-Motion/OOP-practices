@@ -1,87 +1,87 @@
-#
-# class Animal:
-#     def __init__(self, name: str, type: str, age: int, sound: str):
-#         """
-#         Формирует шаблон объекта Animal
-#         :param name: Пренимает имя животного
-#         :param type: Пренимает вид животного
-#         :param age: Пренимает возраст животного
-#         :param sound: Пренимает звук, создаваемый животным
-#         """
-#         self.name = name
-#         self.type = type
-#         self.age = age
-#         self.sound = sound
-#
-#     def print_sound_animal(self):
-#         """
-#         Выводит в консоль строку с принятым иенем животного его типом и звуком который оно издает
-#         :return:
-#         """
-#         print(f'{self.type} с именем {self.name} издает звук: {self.sound}')
-#         print()
-#
-#     def print_info_animal(self):
-#         """
-#         Выводит в консоль всю информацию о животном в созданном объекте на базе класса Animal
-#         :return:
-#         """
-#         print(f'Информационный блок о созданном вами животном :'
-#               f'\nВид животного : {self.type}'
-#               f'\nИмя животного : {self.name}'
-#               f'\nВозраст животного: {self.age}'
-#               f'\nЗвук который издает животное: {self.sound}')
-#         print()
-#
-#
-# dog = Animal('Шнырь', 'Пес', 7, 'Рррррааааааввв Рррррааааааввв')
-#
-# dog.print_info_animal()
-# dog.print_sound_animal()
+
+class Animal:
+    def __init__(self, name: str, type: str, age: int, sound: str):
+        """
+        Формирует шаблон объекта Animal
+        :param name: Пренимает имя животного
+        :param type: Пренимает вид животного
+        :param age: Пренимает возраст животного
+        :param sound: Пренимает звук, создаваемый животным
+        """
+        self.name = name
+        self.type = type
+        self.age = age
+        self.sound = sound
+
+    def print_sound_animal(self):
+        """
+        Выводит в консоль строку с принятым иенем животного его типом и звуком который оно издает
+        :return:
+        """
+        print(f'{self.type} с именем {self.name} издает звук: {self.sound}')
+        print()
+
+    def print_info_animal(self):
+        """
+        Выводит в консоль всю информацию о животном в созданном объекте на базе класса Animal
+        :return:
+        """
+        print(f'Информационный блок о созданном вами животном :'
+              f'\nВид животного : {self.type}'
+              f'\nИмя животного : {self.name}'
+              f'\nВозраст животного: {self.age}'
+              f'\nЗвук который издает животное: {self.sound}')
+        print()
 
 
-# class Book:
-#
-#     def __init__(self, name: str, author: str, count_pages: int):
-#         """
-#         Формирует шаблон объекта Book
-#         :param name: Пренимает название книги
-#         :param author: Пренимает автора книги
-#         :param count_pages: Пренимает количество страниц книги
-#         """
-#         self.name = name
-#         self.author = author
-#         self.count_pages = count_pages
-#
-#     def open_page(self):
-#         """
-#         Выполняет проверки и если они пройдены выводит строку- открылась страница или нет
-#         :return:
-#         """
-#         number_page = int(input('Введите номер страницы, которую требуется открыть >> '))
-#
-#         if number_page <= self.count_pages and number_page > 0:
-#             print('Страница в вашей книге найдена и открыта')
-#             print()
-#         else:
-#             print('Номер указанной страницы в вашей книге отсутствует')
-#             print()
-#
-#
-#     def print_book_info(self):
-#         """
-#         Выводит в консоль всю информацию о книге в созданном объекте на базе класса Book
-#         :return:
-#         """
-#         print(f'Информационный блок о вашей книге :'
-#               f'\nНазвание книги: {self.name}'
-#               f'\nАвтор книги: {self.author}'
-#               f'\nКоличество страниц: {self.count_pages}')
-#         print()
-#
-# war_and_world = Book('Война и мир', 'Лев Толстой', 1300)
-# war_and_world.open_page()
-# war_and_world.print_book_info()
+dog = Animal('Шнырь', 'Пес', 7, 'Рррррааааааввв Рррррааааааввв')
+
+dog.print_info_animal()
+dog.print_sound_animal()
+
+
+class Book:
+
+    def __init__(self, name: str, author: str, count_pages: int):
+        """
+        Формирует шаблон объекта Book
+        :param name: Пренимает название книги
+        :param author: Пренимает автора книги
+        :param count_pages: Пренимает количество страниц книги
+        """
+        self.name = name
+        self.author = author
+        self.count_pages = count_pages
+
+    def open_page(self):
+        """
+        Выполняет проверки и если они пройдены выводит строку- открылась страница или нет
+        :return:
+        """
+        number_page = int(input('Введите номер страницы, которую требуется открыть >> '))
+
+        if number_page <= self.count_pages and number_page > 0:
+            print('Страница в вашей книге найдена и открыта')
+            print()
+        else:
+            print('Номер указанной страницы в вашей книге отсутствует')
+            print()
+
+
+    def print_book_info(self):
+        """
+        Выводит в консоль всю информацию о книге в созданном объекте на базе класса Book
+        :return:
+        """
+        print(f'Информационный блок о вашей книге :'
+              f'\nНазвание книги: {self.name}'
+              f'\nАвтор книги: {self.author}'
+              f'\nКоличество страниц: {self.count_pages}')
+        print()
+
+war_and_world = Book('Война и мир', 'Лев Толстой', 1300)
+war_and_world.open_page()
+war_and_world.print_book_info()
 
 
 class PassengerPlane:
@@ -215,24 +215,77 @@ class MusicAlbum:
         print()
 
 
-    def dell_track(self, track_list):
+    def dell_track(self):
         track = input('Введите название трека, который требуется удалить >>')
 
         text = f'В вашем альбоме нет трека с названием "{track}"'
 
-        for i in track_list:
+        for i in self.track_list:
             if track == i:
-                del i
+                self.track_list.remove(i)
                 text = f'Трек с названием "{track}" был успешно удален из вашего альбома'
         print(text)
         print()
 
-    def reproduces_track(self, track_list):
+    def reproduces_track(self):
         track = input('Введите название трека, который требуется воспроизвести >>')
-
-        for i in track_list:
+        flag = False
+        for i in self.track_list:
             if track == i:
+                flag = True
                 print('Воспроизведение песни....')
-            else:
+        if not flag:
                 print('Указанный трек отсутствует в вашей коллекции')
 
+
+    def print_albom_info(self):
+        """
+        Выводит в консоль всю информацию о музыкальном альбомее в созданном объекте на базе класса MusicAlbum
+        :return:
+        """
+        print(f'Информационный блок о вашем музыкальном альбоме :'
+              f'\nИсполнитель: {self.executor}'
+              f'\nЖанр музыки: {self.genre}'
+              f'\nНазвание альбома: {self.name_albom}'
+              f'\nСписок треков: {self.track_list}')
+        print()
+
+muz_albom = MusicAlbum('БИ 2', 'Горизонт событий', 'Рок', 'Летчик, Ананас, Кручу верчу, Веник')
+muz_albom.add_track()
+muz_albom.dell_track()
+muz_albom.reproduces_track()
+muz_albom.print_albom_info()
+
+class Programm:
+    @staticmethod
+    def main():
+
+        dog = Animal('Шнырь', 'Пес', 7, 'Рррррааааааввв Рррррааааааввв')
+
+        dog.print_info_animal()
+        dog.print_sound_animal()
+#============================================================================================
+
+        war_and_world = Book('Война и мир', 'Лев Толстой', 1300)
+
+        war_and_world.open_page()
+        war_and_world.print_book_info()
+#============================================================================================
+
+        air_plane = PassengerPlane('Россия', 'Airbus A320NEO', 120, 0, 0)
+
+        air_plane.takeoff()
+        air_plane.speed_change()
+        air_plane.height_change()
+        air_plane.plane_landing()
+        air_plane.print_PassengerPlane_info()
+#============================================================================================
+
+        muz_albom = MusicAlbum('БИ 2', 'Горизонт событий', 'Рок', ['Летчик', 'Ананас', 'Кручу верчу', 'Веник'])
+
+        muz_albom.add_track()
+        muz_albom.dell_track()
+        muz_albom.reproduces_track()
+        muz_albom.print_albom_info()
+
+Programm.main()
