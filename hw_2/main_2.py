@@ -11,6 +11,7 @@ class Patient:
         self.age = age
         self.disease = disease
 
+
     def makes_an_appointment(self, date: str):
         """
         Выводит уведомление о записи на прием к врачу на указанную дату
@@ -32,3 +33,15 @@ valera.makes_an_appointment('24. 12. 1807')
 valera.print_patient_info()
 
 
+class TouristSpot:
+
+    def __init__(self, name_place: str, country: str, type_of_attraction: str):
+        """
+         Формирует шаблон объекта TouristSpot
+        :param name_place: Пренимает название места
+        :param country: Пренимает страну расположения
+        :param type_of_attraction: Пренимает тип достопримечательности
+        """
+        self.name_place = name_place
+        self.country = country
+        self.type_of_attraction = type_of_attraction
