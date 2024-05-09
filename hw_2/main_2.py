@@ -56,3 +56,16 @@ class TouristSpot:
         print(f'Турист {name} посетил {self.name_place}, расположенню в {self.country}\n')
 
 
+    def print_info_name_place(self):
+        """
+        Выводит информацию о туристическом месте
+        :return:
+        """
+        print(f'Название места: {self.name_place}\n'
+              f'Страна расположения: {self.country}\n'
+              f'Тип достопримечательности: {self.type_of_attraction}')
+
+
+venecia = TouristSpot('Венеция', 'Италия', 'Венециансктй театр')
+venecia.visiting_the_place('Аркадий')
+venecia.print_info_name_place()
