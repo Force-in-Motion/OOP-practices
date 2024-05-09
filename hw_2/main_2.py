@@ -11,4 +11,4 @@ class Patient:
         self.age = age
         self.disease = disease
 
-    
+
