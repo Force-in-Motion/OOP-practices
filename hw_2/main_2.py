@@ -11,4 +11,14 @@ class Patient:
         self.age = age
         self.disease = disease
 
+    def makes_an_appointment(self, date: str):
+        """
+        Выводит уведомление о записи на прием к врачу на указанную дату
+        :param date: Пренимает дату записи на прием
+        :return:
+        """
+        print(f'Вы успешно записаны на прием на следующую дату: {date}\n')
+
+
+
 
