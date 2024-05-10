@@ -234,8 +234,57 @@
 #       f'Максимальный элемент массива: {ArrayUtils.max_elem(lst)}\n'
 #       f'Минимальный элемент массива: {ArrayUtils.min_elem(lst)}')
 
-class Vector:
-
-    x = float
-    y = float
-    z = float
+# class Vector:
+#
+#     x = float
+#     y = float
+#     z = float
+#
+#     def __init__(self, x: float, y: float, z: float):
+#         """
+#         Формирует шаблон объекта
+#         :param x: Пренимает координату x
+#         :param y: Пренимает координату y
+#         :param z: Пренимает координату z
+#         """
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#
+#     def __add__(self, other):
+#         new_x = self.x + other.x
+#         new_y = self.y + other.y
+#         new_z = self.z + other.z
+#         return Vector(new_x, new_y, new_z)
+#
+#     def __sub__(self, other):
+#         new_x = self.x - other.x
+#         new_y = self.y - other.y
+#         new_z = self.z - other.z
+#         return Vector(new_x, new_y, new_z)
+#
+#     def __mul__(self, other):
+#         if isinstance(other, int) or isinstance(other, float):
+#             new_x = self.x * other
+#             new_y = self.y * other
+#             new_z = self.z * other
+#             return Vector(new_x, new_y, new_z)
+#
+#         if isinstance(self, Vector) or isinstance(other, Vector):
+#             new_x = self.y * other.z - self.z * other.y
+#             new_y = self.z * other.x - self.x * other.z
+#             new_z = self.x * other.y - self.y * other.x
+#             return Vector(new_x, new_y, new_z)
+#
+#     @staticmethod
+#     def find_scalar_mult(vec_a, vec_b):
+#         scalar_mult = vec_a.x * vec_b.x + vec_a.y * vec_b.y + vec_a.z * vec_b.z
+#         return scalar_mult
+#
+#     @staticmethod
+#     def find_norm_lenght_vector(self):
+#         lenght_vector = (self.x ** 2 + self.y ** 2 + self.z ** 2) ** 0.5
+#         return lenght_vector
+#
+#     def __str__(self):
+#         return f'Результат текущих вычислений: {self.x, self.y, self.z}'
