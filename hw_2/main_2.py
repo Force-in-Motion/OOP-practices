@@ -165,41 +165,77 @@
 # print(window)
 
 
-class ArrayUtils:
+# class ArrayUtils:
+#
+#     @staticmethod
+#     def sum_elems(lst: list):
+#         """
+#         Выполняет сложение элементов массива
+#         :param lst: Пренимает массив
+#         :return: Возвращает Результат сложения элементов массива
+#         """
+#         sum = 0
+#         for elem in lst:
+#             sum += elem
+#         return sum
+#
+#     @staticmethod
+#     def mult_elems(lst: list):
+#         """
+#         Выполняет умножение элементов массива
+#         :param lst: Пренимает массив
+#         :return: Возвращает Результат умножения элементов массива
+#         """
+#         mult = 1
+#         for elem in lst:
+#             mult *= elem
+#         return mult
+#
+#     @staticmethod
+#     def invers_elems(lst: list):
+#         """
+#         Выполняет инверсию массива
+#         :param lst: Пренимает массив
+#         :return: Возвращает перевернутый массив
+#         """
+#         lst = lst[::-1]
+#         return lst
+#
+#     @staticmethod
+#     def max_elem(lst: list):
+#         """
+#         Находит максимальный элемент масива
+#         :param lst: Пренимает массив
+#         :return: Возвращает максимальный элемент массива
+#         """
+#         max_elem = 0
+#         for elem in lst:
+#             if elem > max_elem:
+#                 max_elem = elem
+#         return max_elem
+#
+#     @staticmethod
+#     def min_elem(lst: list):
+#         """
+#         Находит минимальный элемент масива
+#         :param lst: Пренимает массив
+#         :return: Возвращает минимальный элемент массива
+#         """
+#         min_elem = 99999999999999999999999
+#         for elem in lst:
+#             if elem < min_elem:
+#                 min_elem = elem
+#         return min_elem
+#
+# lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# print(f'Сумма элементов массива: {ArrayUtils.sum_elems(lst)}\n'
+#       f'Произведение элементов массива: {ArrayUtils.mult_elems(lst)}\n'
+#       f'Инверсия элементов массива: {ArrayUtils.invers_elems(lst)}\n'
+#       f'Максимальный элемент массива: {ArrayUtils.max_elem(lst)}\n'
+#       f'Минимальный элемент массива: {ArrayUtils.min_elem(lst)}')
 
-    @staticmethod
-    def sum_elems(lst: list):
-        """
-        Выполняет сложение элементов массива
-        :param lst: Пренимает массив
-        :return: Возвращает Результат сложения элементов массива
-        """
-        sum = 0
-        for elem in lst:
-            sum += elem
-        return sum
+class Vector:
 
-    @staticmethod
-    def mult_elems(lst: list):
-        """
-        Выполняет умножение элементов массива
-        :param lst: Пренимает массив
-        :return: Возвращает Результат умножения элементов массива
-        """
-        mult = 1
-        for elem in lst:
-            mult *= elem
-        return mult
-
-    @staticmethod
-    def invers_elems(lst: list):
-        """
-        Выполняет инверсию массива
-        :param lst: Пренимает массив
-        :return: Возвращает перевернутый массив
-        """
-        lst = lst[::-1]
-        return lst
-
-    @staticmethod
-    def 
+    x = float
+    y = float
+    z = float
