@@ -169,15 +169,37 @@ class ArrayUtils:
 
     @staticmethod
     def sum_elems(lst: list):
+        """
+        Выполняет сложение элементов массива
+        :param lst: Пренимает массив
+        :return: Возвращает Результат сложения элементов массива
+        """
         sum = 0
         for elem in lst:
             sum += elem
         return sum
 
-
     @staticmethod
     def mult_elems(lst: list):
+        """
+        Выполняет умножение элементов массива
+        :param lst: Пренимает массив
+        :return: Возвращает Результат умножения элементов массива
+        """
         mult = 1
         for elem in lst:
             mult *= elem
         return mult
+
+    @staticmethod
+    def invers_elems(lst: list):
+        """
+        Выполняет инверсию массива
+        :param lst: Пренимает массив
+        :return: Возвращает перевернутый массив
+        """
+        lst = lst[::-1]
+        return lst
+
+    @staticmethod
+    def 
