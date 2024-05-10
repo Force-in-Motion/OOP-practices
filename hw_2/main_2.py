@@ -71,23 +71,113 @@
 # venecia.print_info_name_place()
 
 
-class ModelWindow:
+# class ModelWindow:
+#
+#     name_window: str
+#     coordinates_left_angle: int
+#     color_window: str
+#     state_visibility: str
+#     state_frame: str
+#     horizontal_size = 1980
+#     vertical_size = 1080
+#
+#     def __init__(self, name_window: str, coordinates_left_angle: int, color_window: str, state_visibility: str, state_frame: str, horizontal_size=1980, verticals_size=1080):
+#         """
+#         Формирует шаблон объекта ModelWindow
+#         :param name_window: Пренимает заголовок окна
+#         :param coordinates_left_angle: Пренимает координаты левого угла
+#         :param horizontal_size: Пренимает размер по горизонтали
+#         :param verticals_size: Пренимает размер по вертикали
+#         :param color_window: Пренимает цвет окна
+#         :param state_visibility: Пренимает состояние: “видимое/невидимое”
+#         :param state_frame: Пренимает состояние: “с рамкой/без рамки”
+#         """
+#
+#         self.name_window = name_window
+#         self.coordinates_left_angle = coordinates_left_angle
+#         self.horizontal_size = horizontal_size
+#         self.verticals_size = verticals_size
+#         self.color_window = color_window
+#         self.state_visibility = state_visibility
+#         self.state_frame = state_frame
+#
+#     def movement_window_for_horizontal(self, new_x, new_y):
+#         """
+#         Передвигает окно по горизонтали и по вертикали
+#         :return:
+#         """
+#         if not self.horizontal_size <= ModelWindow.horizontal_size and self.verticals_size <= ModelWindow.vertical_size:
+#             print('Введено недопустимое значение, максимальное разрешение экрана 1960х1080 введите другое значение')
+#         else:
+#             self.horizontal_size = new_x
+#             self.verticals_size = new_y
+#
+#     def height_change_or_width(self, new_horizontal, new_vertical):
+#         """
+#         Изменяет высоту окна или его ширину и высоту
+#         :return:
+#         """
+#         if not self.horizontal_size <= ModelWindow.horizontal_size and self.verticals_size <= ModelWindow.vertical_size:
+#             print('Введено недопустимое значение, максимальное разрешение экрана 1960х1080 введите другое значение')
+#         else:
+#             self.horizontal_size = new_horizontal
+#             self.verticals_size = new_vertical
+#
+#     def change_color(self, new_color):
+#         """
+#         Изменяет цвет окна
+#         :return:
+#         """
+#         self.color_window = new_color
+#
+#     def change_state_visibility(self, new_state_visibility, new_state_frame):
+#         """
+#         Изменяет состояние: “видимое/невидимое” и “с рамкой/без рамки”
+#         :return:
+#         """
+#         self.state_visibility = new_state_visibility
+#         self.state_frame = new_state_frame
+#
+#     def displays_status(self):
+#         """
+#         Выводит состояние: “с рамкой/без рамки” и “видимое/невидимое”
+#         :return:
+#         """
+#         print(f'Состояние видимости: {self.state_visibility}\n'
+#               f'Наличие рамки: {self.state_frame}\n')
+#
+#     def __str__(self):
+#         return (f'Текущее состояние окна:\n'
+#                 f'Заголовок окна: {self.name_window}\n'
+#                 f'Координаты левого верхнего угла: {self.coordinates_left_angle}\n'
+#                 f'Размер по горизонтали: {self.horizontal_size}\n'
+#                 f'Размер по вертикали: {self.verticals_size}\n'
+#                 f'Цвет окна: {self.color_window}\n'
+#                 f'Состояние “видимое/невидимое”: {self.state_visibility}\n'
+#                 f'Состояние “с рамкой/без рамки”: {self.state_frame}')
+#
+# window = ModelWindow('Ананас', '120', 'Grey', 'Не видимое', 'Без рамки')
+# window.movement_window_for_horizontal(250, 480)
+# window.height_change_or_width(1840, 920)
+# window.change_color('Yelow')
+# window.change_state_visibility('Видимое', 'С рамкой')
+# window.displays_status()
+# print(window)
 
-    def __init__(self, name_window: str, coordinates_left_angle: float, horizontal_size: float, verticals_size: float, color_window: str, state_visibility: str, state_frame: str):
-        """
-        Формирует шаблон объекта ModelWindow
-        :param name_window: Пренимает заголовок окна
-        :param coordinates_left_angle: Пренимает координаты левого угла
-        :param horizontal_size: Пренимает размер по горизонтали
-        :param verticals_size: Пренимает размер по вертикали
-        :param color_window: Пренимает цвет окна
-        :param state_visibility: Пренимает состояние: “видимое/невидимое”
-        :param state_frame: Пренимает состояние: “с рамкой/без рамки”
-        """
-        self.name_window = name_window
-        self.coordinates_left_angle = coordinates_left_angle
-        self.horizontal_size = horizontal_size
-        self.verticals_size = verticals_size
-        self.color_window = color_window
-        self.state_visibility = state_visibility
-        self.state_frame = state_frame
+
+class ArrayUtils:
+
+    @staticmethod
+    def sum_elems(lst: list):
+        sum = 0
+        for elem in lst:
+            sum += elem
+        return sum
+
+
+    @staticmethod
+    def mult_elems(lst: list):
+        mult = 1
+        for elem in lst:
+            mult *= elem
+        return mult
