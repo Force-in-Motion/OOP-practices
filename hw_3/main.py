@@ -118,3 +118,6 @@ potion.get_info_ingredients()
 print(potion)
 
 
+class Library:
+
+    def __init__(self, name_bibliotec, adres, list_book: list[Book] = None, list_users: list[User], ):
