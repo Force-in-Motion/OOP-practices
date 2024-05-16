@@ -108,55 +108,90 @@ class Potion:
 
 
 
-potion = Potion('Зелье скорости', 10, 'Увеличение скорости бега', True)
-print(potion)
-potion.set_add_ingridients('Бычьи яйца',)
-potion.set_del_ingridients('Гвозди')
-potion.set_difficulty(8)
-potion.set_create_potion()
-potion.set_effect_potion('Уменьшение гравитации')
-potion.get_state_potion()
-potion.get_info_ingredients()
-print(potion)
+
+# class Library:
+#
+#     name_bibliotec: str
+#     adres: str or int
+#     list_book: list[Book] = None
+#     list_users: list[User] = None
+#
+#     def __init__(self, name_bibliotec: str, adres: str or int, list_book: list[Book] = None, list_users: list[User] = None, ):
+#         self.name_bibliotec = name_bibliotec
+#         self.adres = adres
+#         if list_book is None:
+#             self.list_book = []
+#         else:
+#             self.list_book = list_book
+#         if list_users is None:
+#             self.list_users = []
+#         else:
+#             self.list_users = list_users
+#
+#
+#
+# class Book:
+#     name_book: str
+#     author: str
+#     year_publishing: int
+#     genre: str
+#     state: bool
+#     current_user: User = None
+#
+#     def __init__(self, name_book: str, author: str, year_publishing: int, genre: str, state: bool, current_user: User = None):
+#         self.name_book = name_book
+#         self.author = author
+#         self.year_publishing = year_publishing
+#         self.genre = genre
+#         self.state = state
+#         self.current_user = current_user
+#
+#
+#     def set_state(self, data):
+#         """
+#         Изменяет состояние книли- "в наличии/выдана"
+#         :return:
+#         """
+#         if isinstance(data, bool):
+#             self.state = data
+#
+#
+#     def set_current_user(self, data):
+#         """
+#         Назначает текущего пользователя
+#         :param data:
+#         :return:
+#         """
+#         if self.current_user is not None:
+#             self.current_user = data
+#
+#
+#
+# class User:
+#
+#     name_user: str
+#     number_ticket: int
+#     list_taked_book: [Book] = None
+#
+#     def __init__(self, name_user: str, number_ticket: int, list_taked_book: [Book] = None):
+#         self.name_user = name_user
+#         self.number_ticket = number_ticket
+#         self.list_taked_book = list_taked_book
 
 
-class Library:
+class Program:
 
-    name_bibliotec: str
-    adres: str or int
-    list_book: list[Book] = None
-    list_users: list[User] = None
+    @staticmethod
+    def main():
+        potion = Potion('Зелье скорости', 10, 'Увеличение скорости бега', True)
+        print(potion)
+        potion.set_add_ingridients('Бычьи яйца', )
+        potion.set_del_ingridients('Гвозди')
+        potion.set_difficulty(8)
+        potion.set_create_potion()
+        potion.set_effect_potion('Уменьшение гравитации')
+        potion.get_state_potion()
+        potion.get_info_ingredients()
+        print(potion)
 
-    def __init__(self, name_bibliotec: str, adres: str or int, list_book: list[Book] = None, list_users: list[User] = None, ):
-        self.name_bibliotec = name_bibliotec
-        self.adres = adres
-        self.list_book = list_book
-        self.list_users = list_users
-
-class Book:
-    name_book: str
-    author: str
-    year_publishing: int
-    genre: str
-    state: bool
-    current_user: User = None
-
-    def __init__(self, name_book: str, author: str, year_publishing: int, genre: str, state: bool, current_user: User = None):
-        self.name_book = name_book
-        self.author = author
-        self.year_publishing = year_publishing
-        self.genre = genre
-        self.state = state
-        self.current_user = current_user
-
-
-class User:
-    
-    name_user: str
-    number_ticket: int
-    list_taked_book: [Book] = None
-
-    def __init__(self, name_user: str, number_ticket: int, list_taked_book: [Book] = None):
-        self.name_user = name_user
-        self.number_ticket = number_ticket
-        self.list_taked_book = list_taked_book
+Program.main()
