@@ -140,8 +140,7 @@ class ModelWindow:
         Выводит состояние: “с рамкой/без рамки” и “видимое/невидимое”
         :return:
         """
-        print(f'Состояние видимости: {self.state_visibility}\n'
-              f'Наличие рамки: {self.state_frame}\n')
+        return self.state_frame, self.state_frame
 
 
     def __str__(self):
