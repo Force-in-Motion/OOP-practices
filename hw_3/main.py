@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 
 class Potion:
 
@@ -120,4 +122,30 @@ print(potion)
 
 class Library:
 
-    def __init__(self, name_bibliotec, adres, list_book: list[Book] = None, list_users: list[User], ):
+    name_bibliotec: str
+    adres: str or int
+    list_book: list[Book] = None
+    list_users: list[User] = None
+
+    def __init__(self, name_bibliotec: str, adres: str or int, list_book: list[Book] = None, list_users: list[User] = None, ):
+        self.name_bibliotec = name_bibliotec
+        self.adres = adres
+        self.list_book = list_book
+        self.list_users = list_users
+
+class Book:
+    name_book: str
+    author: str
+    year_publishing: int
+    genre: str
+    state: bool
+    current_user: User = None
+
+    def __init__(self, name_book: str, author: str, year_publishing: int, genre: str, state: bool, current_user: User = None):
+        self.name_book = name_book
+        self.author = author
+        self.year_publishing = year_publishing
+        self.genre = genre
+        self.state = state
+        self.current_user = current_user
+        
