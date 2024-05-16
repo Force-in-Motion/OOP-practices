@@ -148,4 +148,15 @@ class Book:
         self.genre = genre
         self.state = state
         self.current_user = current_user
-        
+
+
+class User:
+    
+    name_user: str
+    number_ticket: int
+    list_taked_book: [Book] = None
+
+    def __init__(self, name_user: str, number_ticket: int, list_taked_book: [Book] = None):
+        self.name_user = name_user
+        self.number_ticket = number_ticket
+        self.list_taked_book = list_taked_book
