@@ -644,8 +644,8 @@ class Achievement:
         self.__year_of_issue = year_of_issue
 
     def __str__(self):
-        return (f'Название достижения: {self.__name}'
-                f'Год получения достижения: {self.__year_of_issue}')
+        return (f'Название достижения: {self.__name}\n'
+                f'Год получения достижения: {self.__year_of_issue}\n')
 
 
 
@@ -711,7 +711,7 @@ class Program:
 
         print(robot_natasha)
 
-# ================================= Athlete ============================================
+# ================================= Achievement ============================================
 
         achivment = Achievement('Нокаутировал Тайсона', 1998)
 
