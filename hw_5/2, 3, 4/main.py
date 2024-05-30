@@ -118,7 +118,57 @@ class Book:
                 f'Список жанров книги: {self.__list_genre}')
 
 
-
-
 class Genre:
-    pass
+
+    name: str
+    description: str
+
+    def __init__(self, name: str, description: str):
+        """
+        Формирует шаблон объекта Genre
+        :param name: Пренимает название жанра
+        :param description: Пренимает описание жанра
+        """
+        self.__name = name
+        self.__description = description
+
+    def get_name(self):
+        """
+        :return: Возвращает название жанра
+        """
+        return self.__name
+
+    def get_description(self):
+        """
+        :return: Возвращает описание жанра
+        """
+        return self.__description
+
+    def set_name(self, data: str):
+        """
+        Назначает название жанра
+        :param data: Пренимает название жанра
+        :return: None
+        """
+        if not isinstance(data, str):
+            raise TypeError('Получен не верный тип данных, ожидалась строка')
+        self.__name = data
+
+    def set_description(self, data: str):
+        """
+        Назначает описание жанра
+        :param data: Пренимает описание жанра
+        :return: None
+        """
+        if not isinstance(data, str):
+            raise TypeError('Получен не верный тип данных, ожидалась строка')
+        self.__description = data
+
+    def __str__(self):
+        """
+        :return: Возвращает строковое представление объекта Genre
+        """
+        return (f'Название жанра: {self.__name}'
+                f'Описание жанра: {self.__description}')
+
+
