@@ -143,17 +143,22 @@ class Student:
                 f'Средний балл студента: {self.__average_score}\n')
 
 
-st1 = Student('Колян', 'Филатов', 28, 78)
-st2 = Student('Кеша', 'Геворгян', 21, 89)
+class Program:
 
-print(st1)
-print(st2)
+    @staticmethod
+    def main():
+        st1 = Student('Колян', 'Филатов', 28, 78)
+        st2 = Student('Кеша', 'Геворгян', 21, 89)
 
-st1.set_average_score(89)
+        print(st1)
+        print(st2)
 
-print(st1.get_average_score() == st2.get_average_score())
+        st1.set_average_score(89)
 
-st2.set_average_score(28)
+        print(st1.get_average_score() == st2.get_average_score())
 
-print(st1.get_average_score() > st2.get_average_score())
+        st2.set_average_score(28)
 
+        print(st1.get_average_score() > st2.get_average_score())
+
+Program.main()
