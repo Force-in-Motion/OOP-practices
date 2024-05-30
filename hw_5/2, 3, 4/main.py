@@ -23,7 +23,8 @@ class Book:
         self.__id_book = id_book
         if list_genre is None:
             self.__list_genre = []
-        self.__list_genre = list_genre
+        else:
+            self.__list_genre = list_genre
 
     def get_title(self):
         """
@@ -112,7 +113,7 @@ class Book:
         :return: Возвращает строковое представление объекта
         """
         return (f'Название книги: {self.__title}\n'
-                f'Автор книги: {self.__author}'
+                f'Автор книги: {self.__author}\n'
                 f'Год публикации книги: {self.__year_publishing}\n'
                 f'ID книги: {self.__id_book}\n'
                 f'Список жанров книги: {self.__list_genre}\n')
@@ -245,7 +246,8 @@ class Employee:
         self.__id_employee = id_employee
         if contact_info is None:
             self.__contact_info = []
-        self.__contact_info = contact_info
+        else:
+            self.__contact_info = contact_info
 
     def get_name(self):
         """
@@ -326,4 +328,160 @@ class Employee:
                 f'Занимаемая должность: {self.__job_position}\n'
                 f'ID сотрудника: {self.__id_employee}\n'
                 f'Контактная информация: {self.__contact_info}\n')
+
+
+class Library:
+
+    name: str
+    adress: str
+    list_books: list[Book]
+    list_employees: list[Employee]
+
+    def __init__(self, name: str, adress: str, list_books: list[Book] = None, list_employees: list[Employee] = None):
+        """
+        Формирует шаблон объекта library
+        :param name: Пренимает название библиотеки
+        :param adress: Пренимает адрес библиотеки
+        :param list_books: Пренимает список книг
+        :param list_employees: Пренимает список сотрудников
+        """
+        self.__name = name
+        self.__adress = adress
+
+        if list_books is None:
+            self.__list_books = []
+        else:
+            self.__list_books = list_books
+
+        if list_employees is None:
+            self.__list_employees = []
+        else:
+            self.__list_employees = list_employees
+
+    def get_name(self):
+        """
+        :return: Возвращает название библиотеки
+        """
+        return self.__name
+
+    def get_adress(self):
+        """
+        :return: Возвращает адрес библиотеки
+        """
+        return self.__adress
+
+    def get_list_books(self):
+        """
+        :return: Возвращает список книг
+        """
+        return self.__list_books
+
+    def get_list_employees(self):
+        """
+        :return: Возвращает список сотрудников
+        """
+        return self.__list_employees
+
+    def set_name(self, data: str):
+        """
+        Назначает название библиотеки
+        :param data: Пренимает название библиотеки
+        :return: None
+        """
+        if not isinstance(data, str):
+            raise TypeError('олучен не верный тип данных, ожидалась строка')
+        self.__name = data
+
+    def set_adress(self, data: str):
+        """
+        Назначает адрес библиотеки
+        :param data: Пренимает адрес библиотеки
+        :return: None
+        """
+        if not isinstance(data, str):
+            raise TypeError('Получен не верный тип данных, ожидалась строка')
+        self.__adress = data
+
+
+    def add_book(self, data: Book):
+        """
+        Добавляет в список книг новую книгу
+        :param data: Пренимает книгу
+        :return: None
+        """
+        if not isinstance(data, Book):
+            raise TypeError('Получен не верный тип данных, ожидались данные типа Book')
+        self.__list_books.append(data)
+
+    def remove_book(self, data: Book):
+        """
+        Удаляет книгу из списка
+        :param data: Пренимает книгу
+        :return: None
+        """
+        if not isinstance(data, Book):
+            raise TypeError('Получен не верный тип данных, ожидались данные типа Book')
+        self.__list_books.remove(data)
+
+    def add_employee(self, data: Employee):
+        """
+        Добавляет в список нового пользователя
+        :param data: Пренимает пользователя
+        :return: None
+        """
+        if not isinstance(data, Employee):
+            raise TypeError('Получен не верный тип данных, ожидались данные типа Employee')
+        self.__list_employees.append(data)
+
+    def remove_employee(self, data: Employee):
+        """
+        даляет из списока нового пользователя
+        :param data: Удаляет пользователя
+        :return: None
+        """
+        if not isinstance(data, Employee):
+            raise TypeError('Получен не верный тип данных, ожидались данные типа Employee')
+        self.__list_employees.remove(data)
+
+    def __str__(self):
+        """
+        :return: Возвращает строковое значение объекта library
+        """
+        return (f'Название библиотеки: {self.__name}\n'
+                f'Адрес библиотеки: {self.__adress}\n'
+                f'Список книг: {self.__list_books}\n'
+                f'Список сотрудников:{self.__list_employees}\n')
+
+class Program:
+
+    @staticmethod
+    def main():
+        dramma = Genre('Драмма', 'Содержит трагичный, драмматический сюжет и события в нем ')
+        print(dramma)
+        comedy = Genre('Комедия', 'Содержит коммедийный сюжет на протяжении всех событий')
+        print(comedy)
+
+        war_and_piece = Book('Война и мир', 'Лев Толстой', 1978, 897)
+        war_and_piece.add_genre(dramma)
+        print(war_and_piece)
+
+        grimm = Book('Сказки братьев Гримм', 'Гримм', 1988, 1089)
+        grimm.add_genre(comedy)
+        print(grimm)
+
+        contact_info = ContactInfo('email', 'info@gmail.com')
+        print(contact_info)
+
+        valera = Employee('Валера', 'Библиотекарь', 278)
+        valera.add_contact_info(contact_info)
+        print(valera)
+
+        libr = Library('Библиотека', 'Ленина 128')
+        libr.add_employee(valera)
+        libr.add_book(war_and_piece)
+        print(libr)
+
+
+Program.main()
+
 
