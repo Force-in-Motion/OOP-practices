@@ -2,11 +2,11 @@ from __future__ import annotations
 
 class Book:
 
-    title: str
-    author: str
-    year_publishing: int
-    id_book: int
-    list_genre: list[Genre]
+    __title: str
+    __author: str
+    __year_publishing: int
+    __id_book: int
+    __list_genre: list[Genre]
 
     def __init__(self, title: str, author: str, year_publishing: int, id_book: int, list_genre: list[Genre] = None):
         """
@@ -121,8 +121,8 @@ class Book:
 
 class Genre:
 
-    name: str
-    description: str
+    __name: str
+    __description: str
 
     def __init__(self, name: str, description: str):
         """
@@ -175,8 +175,8 @@ class Genre:
 
 class ContactInfo:
 
-    type_contact: str
-    value_contact: str or int
+    __type_contact: str
+    __value_contact: str or int
 
     def __init__(self, type_contact: str, value_contact: str or int):
         """
@@ -228,10 +228,10 @@ class ContactInfo:
 
 class Employee:
 
-    name: str
-    job_position: str
-    id_employee: int
-    contact_info: list[ContactInfo]
+    __name: str
+    __job_position: str
+    __id_employee: int
+    __contact_info: list[ContactInfo]
 
     def __init__(self, name: str, job_position: str, id_employee: int, contact_info: list[ContactInfo] = None):
         """
@@ -332,10 +332,10 @@ class Employee:
 
 class Library:
 
-    name: str
-    adress: str
-    list_books: list[Book]
-    list_employees: list[Employee]
+    __name: str
+    __adress: str
+    __list_books: list[Book]
+    __list_employees: list[Employee]
 
     def __init__(self, name: str, adress: str, list_books: list[Book] = None, list_employees: list[Employee] = None):
         """
@@ -401,7 +401,6 @@ class Library:
         if not isinstance(data, str):
             raise TypeError('Получен не верный тип данных, ожидалась строка')
         self.__adress = data
-
 
     def add_book(self, data: Book):
         """

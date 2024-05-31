@@ -2,10 +2,10 @@ from __future__ import annotations
 
 class Student:
 
-    name: str
-    surname: str
-    age: int
-    average_score: int
+    __name: str
+    __surname: str
+    __age: int
+    __average_score: int
 
     def __init__(self, name: str, surname: str, age: int, average_score: int):
         """
