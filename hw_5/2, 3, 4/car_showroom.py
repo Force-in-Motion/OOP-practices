@@ -49,7 +49,7 @@ class Car:
 
     def get_status(self):
         """
-        :return: Возвращает статус (в наличии, продано, ожидается)
+        :return: Возвращает статус True / False
         """
         return self.__status
 
@@ -95,7 +95,7 @@ class Car:
         :return: None
         """
         if not isinstance(data, str):
-            raise TypeError('Получен не верный тип данных, ожидалась строка')
+            raise TypeError('Получен не верный тип данных, ожидалось булевое значение')
         self.__status = data
 
     def __str__(self):
@@ -201,6 +201,10 @@ class Customer:
         """
         if not isinstance(data, Car):
             raise TypeError('Получен не верный тип данных, ожидались данный типа Car')
+
+        if data not in self.__list_of_purchased_cars:
+            raise ValueError('Данные отсутствуют в списке')
+
         self.__list_of_purchased_cars.remove(data)
 
     def __str__(self):
@@ -210,21 +214,253 @@ class Customer:
                 f'Список купленных машин: {self.__list_of_purchased_cars}\n')
 
 class Salesperson:
-    pass
 
+    __name: str
+    __work_experience: int
+    __list_sales_cars: list[Car]
 
+    def __init__(self, name: str, work_experience: int, list_sales_cars: list[Car] = None):
+        """
+        Формирует шаблон объекта Salesperson
+        :param name: Пренимает имя сотрудника
+        :param work_experience: Пренимает стаж работы сотрудника
+        :param list_sales_cars: Пренимает список проданных машин
+        """
+        self.__name = name
+        self.__work_experience = work_experience
+        if list_sales_cars is None:
+            self.__list_sales_cars = []
+        else:
+            self.__list_sales_cars = list_sales_cars
 
+    def get_name(self):
+        """
+        :return: Возвращает имя сотрудника
+        """
+        return self.__name
 
+    def get_work_experience(self):
+        """
+        :return: Возвращает стаж работы сотрудника
+        """
+        return self.__work_experience
+
+    def get_list_sales_cars(self):
+        """
+        :return: Возвращает список проданных машин
+        """
+        return self.__list_sales_cars
+
+    def set_name(self):
+        """
+        азначает имя сотрудника
+        :return: None
+        """
+        return self.__name
+
+    def set_work_experience(self):
+        """
+        Назначает стаж работы сотрудника
+        :return: None
+        """
+
+    def add_car_in_list_sales_cars(self, data: Car):
+        """
+        Добавляет машину в список проданных
+        :param data: Пренимает машину
+        :return: None
+        """
+        if not isinstance(data, Car):
+            raise TypeError('Получен не верный тип данных, ожидались данный типа Car')
+        self.__list_sales_cars.append(data)
+
+    def remove_car_in_list_sales_cars(self, data: Car):
+        """
+        Удаляет машину из списка проданных
+        :param data: Пренимает машину
+        :return: None
+        """
+        if not isinstance(data, Car):
+            raise TypeError('Получен не верный тип данных, ожидались данный типа Car')
+
+        if data not in self.__list_sales_cars:
+            raise ValueError('Данные отсутствуют в списке')
+
+        self.__list_sales_cars.remove(data)
+
+    def sell_car(self, car: Car, customer: Customer, dealer: Dealership, salesperson: Salesperson):
+        """
+        Продает машину пользователю
+        :param car: Пренимает машину
+        :param customer: Пренимает покупателя
+        :param dealer: Пренимает диллера
+        :param salesperson: Пренимает продавца
+        :return:
+        """
+        if not isinstance(car, Car) or not isinstance(customer, Customer) or not isinstance(dealer, Dealership) or not isinstance(salesperson, Salesperson):
+            raise TypeError('Получен не верный тип данных, пренимаемые данные могут быть следующих типов: Car, Customer, Dealership, Salesperson')
+
+        if car.get_status() != 'В наличии':
+            raise ValueError('Авто нет в наличии')
+
+        else:
+            dealer.remove_cars_in_list_of_cars_in_stock(car)
+            salesperson.add_car_in_list_sales_cars(car)
+            customer.add_car_in_list_of_purchased_cars(car)
+            car.set_status('Продано')
+
+    def __str__(self):
+        return (f'Имя сотрудника: {self.__name}\n'
+                f'Стаж работы сотрудника: {self.__work_experience}\n'
+                f'Список проданных машин: {self.__list_sales_cars}\n')
 
 
 class Dealership:
-    pass
 
+    __list_of_cars_in_stock: list[Car]
+    __list_of_sellers: list[Salesperson]
+    __list_of_all_clients: list[Customer]
 
+    def __init__(self, list_of_cars_in_stock: list[Car] = None, list_of_sellers: list[Salesperson] = None, list_of_all_clients: list[Customer] = None):
+        """
+        Формирует шаблон объекта Dealership
+        :param list_of_cars_in_stock: Пренимает список всех автомобилей в наличии
+        :param list_of_sellers: Пренимает список всех сотрудников
+        :param list_of_all_clients: Пренимает список всех клиентов
+        """
+        if list_of_cars_in_stock is None:
+            self.__list_of_cars_in_stock = []
+        else:
+            self.__list_of_cars_in_stock = list_of_cars_in_stock
 
+        if list_of_sellers is None:
+            self.__list_of_sellers = []
+        else:
+            self.__list_of_sellers = list_of_sellers
+
+        if list_of_all_clients is None:
+            self.__list_of_all_clients = []
+        else:
+            self.__list_of_all_clients = list_of_all_clients
+
+    def get_list_of_cars_in_stock(self):
+        """
+        :return: Возвращает список автомобилей в наличии
+        """
+        return self.__list_of_cars_in_stock
+
+    def get_list_of_sellers(self):
+        """
+        :return: Возвращает список всех сотрудников
+        """
+        return self.__list_of_sellers
+
+    def get_list_of_all_clients(self):
+        """
+        :return: Возвращает список всех клиентов
+        """
+        return self.__list_of_all_clients
+
+    def add_cars_in_list_of_cars_in_stock(self, data: Car):
+        """
+        Добавляет машину в список автомобилей в наличии
+        :param data: Пренимает машину
+        :return: None
+        """
+        if not isinstance(data, Car):
+            raise TypeError('Получен не верный тип данных, ожидались данный типа Car')
+        self.__list_of_cars_in_stock.append(data)
+
+    def add_sellers_in_list_of_sellers(self, data: Salesperson):
+        """
+        Добавляет сотрудника в список всех сотрудников
+        :param data: Пренимает сотрудника
+        :return: None
+        """
+        if not isinstance(data, Salesperson):
+            raise TypeError('Получен не верный тип данных, ожидались данный типа Salesperson')
+        self.__list_of_sellers.append(data)
+
+    def add_client_in_list_of_all_clients(self, data: Customer):
+        """
+        Добавляет клиента в список всех клиентов
+        :param data: Пренимает клиента
+        :return: None
+        """
+        if not isinstance(data, Customer):
+            raise TypeError('Получен не верный тип данных, ожидались данный типа Customer')
+        self.__list_of_all_clients.append(data)
+
+    def remove_cars_in_list_of_cars_in_stock(self, data: Car):
+        """
+        Удаляет машину из списка автомобилей в наличии автомобилей в наличии
+        :param data: Пренимает машину
+        :return: None
+        """
+        if not isinstance(data, Car):
+            raise TypeError('Получен не верный тип данных, ожидались данный типа Car')
+
+        if data not in self.__list_of_cars_in_stock:
+            raise ValueError('Данные отсутствуют в списке')
+
+        self.__list_of_cars_in_stock.remove(data)
+
+    def remove_sellers_in_list_of_sellers(self, data: Salesperson):
+        """
+        Удаляет сотрудника из списка всех сотрудников
+        :param data: Пренимает сотрудника
+        :return: None
+        """
+        if not isinstance(data, Salesperson):
+            raise TypeError('Получен не верный тип данных, ожидались данный типа Salesperson')
+
+        if data not in self.__list_of_sellers:
+            raise ValueError('Данные отсутствуют в списке')
+
+        self.__list_of_sellers.remove(data)
+
+    def __str__(self):
+        return (f'{self.__list_of_cars_in_stock}\n'
+                f'{self.__list_of_sellers}\n'
+                f'{self.__list_of_all_clients}\n')
 
 class Program:
-    pass
+
+    @staticmethod
+    def main():
+        amg = Car('Mersedes', 'amg', 2024, 8247000, 'В наличии')
+        m5 = Car('BMW', 'M5', 2023, 914800, 'В наличии')
+        volga = Car('Volga', '3110', 1999, 270000, 'В наличии')
+        uaz = Car('Uaz', 'Patriot', 2023, 2800000, 'В наличии')
+
+        cl1 = Customer('John', 8924029429824308, 'john@mail.ru')
+        cl2 = Customer('Rick', 8924029429824308, 'rick@mail.ru')
+        cl3 = Customer('Brad', 8924029429824308, 'brad@mail.ru')
+
+        sel1 = Salesperson('Valera', 5)
+        sel2 = Salesperson('Anatoliy', 7)
+
+        dealer = Dealership()
+
+        dealer.add_cars_in_list_of_cars_in_stock(amg)
+        dealer.add_cars_in_list_of_cars_in_stock(m5)
+        dealer.add_cars_in_list_of_cars_in_stock(volga)
+        dealer.add_cars_in_list_of_cars_in_stock(uaz)
+        print(dealer)
+
+        dealer.add_sellers_in_list_of_sellers(sel1)
+        dealer.add_sellers_in_list_of_sellers(sel2)
+
+        dealer.add_client_in_list_of_all_clients(cl1)
+        dealer.add_client_in_list_of_all_clients(cl2)
+        dealer.add_client_in_list_of_all_clients(cl3)
+
+        sel1.sell_car(m5, cl1, dealer, sel1)
+        sel2.sell_car(uaz, cl2, dealer, sel2)
+
+        print(dealer)
+
+Program.main()
 
 
 
