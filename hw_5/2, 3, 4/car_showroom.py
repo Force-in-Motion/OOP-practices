@@ -154,7 +154,8 @@ class Customer:
         """
         :return: Возвращает список, купленных покупателем, машин
         """
-        return self.__list_of_purchased_cars
+        result = [str(i) for i in self.__list_of_purchased_cars]
+        return '\n'.join(result)
 
     def set_name(self, data: str):
         """
@@ -211,7 +212,7 @@ class Customer:
         return (f'Имя покупателя: {self.__name}\n'
                 f'Телефон покупателя: {self.__phone}\n'
                 f'Почта покупателя: {self.__email}\n'
-                f'Список купленных машин: {self.__list_of_purchased_cars}\n')
+                f'Список купленных машин:\n{self.get_list_of_purchased_cars()}')
 
 class Salesperson:
 
@@ -249,7 +250,8 @@ class Salesperson:
         """
         :return: Возвращает список проданных машин
         """
-        return self.__list_sales_cars
+        result = [str(i) for i in self.__list_sales_cars]
+        return '\n'.join(result)
 
     def set_name(self):
         """
@@ -312,7 +314,7 @@ class Salesperson:
     def __str__(self):
         return (f'Имя сотрудника: {self.__name}\n'
                 f'Стаж работы сотрудника: {self.__work_experience}\n'
-                f'Список проданных машин: {self.__list_sales_cars}\n')
+                f'Список проданных машин:\n{self.get_list_sales_cars()}\n')
 
 
 class Dealership:
@@ -347,19 +349,22 @@ class Dealership:
         """
         :return: Возвращает список автомобилей в наличии
         """
-        return self.__list_of_cars_in_stock
+        result = [str(i) for i in self.__list_of_cars_in_stock]
+        return '\n'.join(result)
 
     def get_list_of_sellers(self):
         """
         :return: Возвращает список всех сотрудников
         """
-        return self.__list_of_sellers
+        result = [str(i) for i in self.__list_of_sellers]
+        return '\n'.join(result)
 
     def get_list_of_all_clients(self):
         """
         :return: Возвращает список всех клиентов
         """
-        return self.__list_of_all_clients
+        result = [str(i) for i in self.__list_of_all_clients]
+        return '\n'.join(result)
 
     def add_cars_in_list_of_cars_in_stock(self, data: Car):
         """
@@ -420,9 +425,9 @@ class Dealership:
         self.__list_of_sellers.remove(data)
 
     def __str__(self):
-        return (f'{self.__list_of_cars_in_stock}\n'
-                f'{self.__list_of_sellers}\n'
-                f'{self.__list_of_all_clients}\n')
+        return (f'{self.get_list_of_cars_in_stock()}\n'
+                f'{self.get_list_of_sellers()}\n'
+                f'{self.get_list_of_all_clients()}\n')
 
 class Program:
 
@@ -446,7 +451,6 @@ class Program:
         dealer.add_cars_in_list_of_cars_in_stock(m5)
         dealer.add_cars_in_list_of_cars_in_stock(volga)
         dealer.add_cars_in_list_of_cars_in_stock(uaz)
-        print(dealer)
 
         dealer.add_sellers_in_list_of_sellers(sel1)
         dealer.add_sellers_in_list_of_sellers(sel2)
@@ -457,8 +461,9 @@ class Program:
 
         sel1.sell_car(m5, cl1, dealer, sel1)
         sel2.sell_car(uaz, cl2, dealer, sel2)
-
+        sel2.sell_car(amg, cl3, dealer, sel2)
         print(dealer)
+        print(m5)
 
 Program.main()
 

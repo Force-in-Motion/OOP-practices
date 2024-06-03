@@ -54,7 +54,8 @@ class Book:
         """
         :return: озвращает список жанров объекта  Genre
         """
-        return self.__list_genre
+        result = [str(i) for i in self.__list_genre]
+        return '\n'.join(result)
 
     def set_title(self, data: str):
         """
@@ -116,7 +117,7 @@ class Book:
                 f'Автор книги: {self.__author}\n'
                 f'Год публикации книги: {self.__year_publishing}\n'
                 f'ID книги: {self.__id_book}\n'
-                f'Список жанров книги: {self.__list_genre}\n')
+                f'Список жанров книги: {self.get_list_genre()}\n')
 
 
 class Genre:
@@ -271,7 +272,8 @@ class Employee:
         """
         :return: Возвращает список объектов класса ContactInfo
         """
-        return self.__contact_info
+        result = [str(i) for i in self.__contact_info]
+        return '\n'.join(result)
 
     def set_name(self, data: str):
         """
@@ -327,7 +329,7 @@ class Employee:
         return (f'Имя сотрудника: {self.__name}\n'
                 f'Занимаемая должность: {self.__job_position}\n'
                 f'ID сотрудника: {self.__id_employee}\n'
-                f'Контактная информация: {self.__contact_info}\n')
+                f'Контактная информация: {self.get_contact_info()}\n')
 
 
 class Library:
@@ -374,13 +376,15 @@ class Library:
         """
         :return: Возвращает список книг
         """
-        return self.__list_books
+        result = [str(i) for i in self.__list_books]
+        return '\n'.join(result)
 
     def get_list_employees(self):
         """
         :return: Возвращает список сотрудников
         """
-        return self.__list_employees
+        result = [str(i) for i in self.__list_employees]
+        return '\n'.join(result)
 
     def set_name(self, data: str):
         """
@@ -448,28 +452,23 @@ class Library:
         """
         return (f'Название библиотеки: {self.__name}\n'
                 f'Адрес библиотеки: {self.__adress}\n'
-                f'Список книг: {self.__list_books}\n'
-                f'Список сотрудников:{self.__list_employees}\n')
+                f'Список книг: {self.get_list_books()}\n'
+                f'Список сотрудников:{self.get_list_employees()}\n')
 
 class Program:
 
     @staticmethod
     def main():
         dramma = Genre('Драмма', 'Содержит трагичный, драмматический сюжет и события в нем ')
-        print(dramma)
         comedy = Genre('Комедия', 'Содержит коммедийный сюжет на протяжении всех событий')
-        print(comedy)
 
         war_and_piece = Book('Война и мир', 'Лев Толстой', 1978, 897)
         war_and_piece.add_genre(dramma)
-        print(war_and_piece)
 
         grimm = Book('Сказки братьев Гримм', 'Гримм', 1988, 1089)
         grimm.add_genre(comedy)
-        print(grimm)
 
         contact_info = ContactInfo('email', 'info@gmail.com')
-        print(contact_info)
 
         valera = Employee('Валера', 'Библиотекарь', 278)
         valera.add_contact_info(contact_info)
