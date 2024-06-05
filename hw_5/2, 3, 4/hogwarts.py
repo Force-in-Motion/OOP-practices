@@ -3,10 +3,10 @@ import random
 
 class HogwartsStudent:
 
-    name: str
-    home_hogwards: str
-    mana: int
-    list_spells: list[Spell]
+    __name: str
+    __home_hogwards: str
+    __mana: int
+    __list_spells: list[Spell]
 
     def __init__(self, name: str,  home_hogwards: str, mana: int = 100, list_spells: list[Spell] = None):
         """
@@ -126,9 +126,9 @@ class HogwartsStudent:
 
 class Spell:
 
-    name_spell: str
-    description_spell: str
-    mana_cost: int
+    __name_spell: str
+    __description_spell: str
+    __mana_cost: int
 
     def __init__(self, name_spell: str, description_spell: str, mana_cost: int):
         """
@@ -204,8 +204,8 @@ class Spell:
 
 class Hogwarts:
 
-    list_students_in_hogwards: list[HogwartsStudent ]
-    list_of_available_spells: list[Spell]
+    __list_students_in_hogwards: list[HogwartsStudent ]
+    __list_of_available_spells: list[Spell]
 
     def __init__(self, list_students_in_hogwards: list[HogwartsStudent] = None, list_of_available_spells: list[Spell] = None):
         """
