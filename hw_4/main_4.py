@@ -728,5 +728,6 @@ class Program:
 
 # ======================================================================================
 
-Program.main()
-
+spell = Achievement('gggg', 1234)
+print(spell.__str__())
+print(Achievement.__str__(spell))

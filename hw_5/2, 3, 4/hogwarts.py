@@ -274,10 +274,10 @@ class Hogwarts:
         """
         while True:
             valera.cast_spell(jora)
-            if valera.get_mana() == 0:
+            if valera.get_mana() == 0 or valera.get_mana() < 0:
                 return f'\nПобедил {jora}'
             jora.cast_spell(valera)
-            if jora.get_mana() == 0:
+            if jora.get_mana() == 0 or jora.get_mana() < 0:
                 return f'\nПобедил {valera}'
 
     def __str__(self):

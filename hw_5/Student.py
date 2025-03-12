@@ -102,7 +102,7 @@ class Student:
         :param other: Пренимает правый операнд для сравнения
         :return:
         """
-        if not isinstance(self or other, int):
+        if not isinstance(other, int):
             raise TypeError('Передан не верный тип данных, ожидается целое число')
         return self.__average_score < other
 
@@ -112,7 +112,7 @@ class Student:
         :param other: Пренимает правый операнд для сравнения
         :return:
         """
-        if not isinstance(self or other, int):
+        if not isinstance(other, int):
             raise TypeError('Передан не верный тип данных, ожидается целое число')
         return self.__average_score > other
 
@@ -162,3 +162,7 @@ class Program:
         print(st1.get_average_score() > st2.get_average_score())
 
 Program.main()
+
+
+
+
